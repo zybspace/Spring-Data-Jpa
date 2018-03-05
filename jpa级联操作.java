@@ -51,5 +51,7 @@ spring data jpa 中@OneToMany在one的一方级联保存中，附表信息可添
       public void setOrganization(Organization organization) {
           this.organization = organization;
       }
-      
   }
+  
+  级联更新要删除未关联的子项时，在@OneToMany中加入orphanRemoval = true配置
+  如：@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "organization", orphanRemoval = true)  
